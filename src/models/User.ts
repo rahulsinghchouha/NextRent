@@ -11,7 +11,9 @@ const UserSchema: Schema<User> = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     phone: { type: Number, required: true },
- 
+    password: { type: String, required: true },
+},{
+    timestamps:true
 })
-const UserModel = mongoose.models.User || mongoose.model<User>('User', UserSchema);
+const UserModel : Model<User> = mongoose.models.User || mongoose.model<User>('User', UserSchema);
 export default UserModel;
