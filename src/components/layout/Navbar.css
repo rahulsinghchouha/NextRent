@@ -1,0 +1,71 @@
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 120px; /* Adjust width as needed */
+}
+
+.language-select {
+  appearance: none; /* Removes default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding-right: 30px; /* Make space for the arrow */
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allows clicks to pass through to the select */
+  color: #555;
+  font-size: 12px;
+}
+
+/* Style for focus state */
+.language-select:focus {
+  outline: none;
+  border-color: #666;
+}
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+}
+
+.language-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  padding-right: 35px;
+  transition: all 0.3s ease;
+}
+
+.language-select:hover {
+  border-color: #b3b3b3;
+  background-color: #f0f0f0;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #666;
+  font-size: 10px;
+}
