@@ -5,13 +5,17 @@ export interface User extends Document {
     email:string;
     phone:number;
     password:string;
+    otp:string;
+    otpExpiry:Date;
 }
 
 const UserSchema: Schema<User> = new Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    phone: { type: Number, required: true },
-    password: { type: String, required: true },
+    name: { type: String, },
+    email: { type: String,},
+    phone: { type: Number, },
+    password: { type: String, },
+    otp: { type: String, },
+    otpExpiry: { type: Date, },
 },{
     timestamps:true
 })

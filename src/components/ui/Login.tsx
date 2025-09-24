@@ -3,7 +3,7 @@ import { useState, memo } from "react";
 import { FiX, FiPhone } from "react-icons/fi";
 import { FcGoogle } from "react-icons/fc";
 import { X, ArrowLeft } from "lucide-react";
-
+import axios from "axios";
 
 type loginModal = {
   setOpenLogin: (isOpen: boolean) => void;
@@ -46,11 +46,14 @@ function LoginModal({
   };
 
   const getNumberOtp = async () => {
-
-    const response = await axios
-
-
-
+    // const response = await axios
+    console.log("getNumberOtp called");
+    try {
+      const response = await axios.post("/api/auth/user", { phone });
+      console.log("response from otp api", response);
+    } catch (error: any) {
+      console.log("error", error);
+    }
   };
 
   return (
@@ -125,12 +128,9 @@ function LoginModal({
             <div className="flex items-center justify-between">
               <ArrowLeft
                 className="cursor-pointer"
-                onClick={() => setOpenLogin(false)}
+                onClick={() => handleTab("")}
               />
-              <X
-                className="cursor-pointer"
-                onClick={() => setOpenLogin(false)}
-              />
+              <X className="cursor-pointer" onClick={() => handleTab("")} />
             </div>
 
             {/* Logo */}
@@ -164,7 +164,7 @@ function LoginModal({
             <button
               onClick={() => getNumberOtp()}
               disabled={disable}
-              className={`w-full mt-6 py-3 rounded-md text-white font-medium transition
+              className={` cursor-pointer w-full mt-6 py-3 rounded-md text-white font-medium transition
             ${
               disable
                 ? "bg-gray-300 cursor-not-allowed"
